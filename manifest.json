@@ -17,9 +17,17 @@
     "128": "icon128.png"
   },
 
+  "content_scripts": [
+    {
+      "matches": ["*://slickdeals.net/*"],
+      "js": ["content-script.js"]
+    }
+  ],
+
   "background": {
     "scripts": [
       "convert.js"
     ]
   }
+
 }
