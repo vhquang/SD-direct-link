@@ -1,14 +1,14 @@
 {
   "manifest_version": 2,
 
-  "name": "SlickDeals no-redirect link",
+  "name": "SD no-redirect link",
   "short_name": "SD skip",
   "description": "Open original deal's link in new tab, without going 3rd party websites",
   "version": "0.0.2",
 
   "permissions": [
     "contextMenus",
-    "*://slickdeal.net/*"
+    "*://slickdeals.net/*"
   ],
 
   "icons": {

@@ -17,19 +17,26 @@ function linkOnClick(info, tab) {
   }
 }
 
+function isFirefox() {
+  return navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+}
+
 function checkLink(info) {
   var linkUrl = info["linkUrl"];
   var pageUrl = info["pageUrl"];
   var originalUrl = getParameterByName(linkUrl, "u2");
   if (originalUrl) {
     chrome.tabs.create({url: originalUrl});
+  } else if (isFirefox()) {
+    console.log("No original URL found.");
   } else {
     window.alert("No original URL found.");
   }
 }
 
 var contextMenuId = chrome.contextMenus.create({
-  "title": "Direct link", "contexts": ["link"],
+  "title": "Direct link",
+  "contexts": ["link"],
   "onclick": checkLink,
   "documentUrlPatterns": ["*://slickdeals.net/*"]
 });
