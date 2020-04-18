@@ -32,7 +32,7 @@ function sendMessageToTabs(tabs, msg) {
     browser.tabs.sendMessage(
       tab.id,
       {msg: msg}
-    ).then(response => {}
+    ).then(response => console.log(response)
     ).catch(onError);
   }
 }
